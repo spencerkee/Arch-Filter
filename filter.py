@@ -7,11 +7,19 @@ import os
 hostsLocation = '/home/archie/Arch-Filter/testhosts'
 inputLocation = '/home/archie/Arch-Filter/inputsites'
 
+def fileLength(fname):
+	num_lines = sum(1 for line in open(fname))
+	return num_lines
+
 def firstBlockLineNumber(filename):
-	with open(filename) as f:
-		for i, l in enumerate(f):
-			if '0.0.0.0' in l:
-				return i
+	existingLines = open(hostsLocation).read()
+	if '0.0.0.0' in existingLines:
+		with open(filename) as f:
+			for i, l in enumerate(f):
+				if '0.0.0.0' in l:
+					return i
+	else:
+		return fileLength(hostsLocation)
 
 def sortHosts():
 	beginingSeperator = firstBlockLineNumber(hostsLocation)
@@ -28,8 +36,6 @@ def sortHosts():
 			index += 1
 	hosts = [x.replace('#', '') for x in hosts if x != '\n']
 	hosts.sort()
-	print 'beginninglines', beginningLines
-	print 'hosts', hosts
 	open(hostsLocation, 'w').close()
 	with open(hostsLocation, 'w') as f:
 		for i in beginningLines:
@@ -49,8 +55,8 @@ def extract_urls_then_write():
 		with open(hostsLocation, "a") as myfile:
 			for url in websites:
 				if '0.0.0.0 ' + url not in existingWebsites:
-					myfile.write('\n0.0.0.0 ' + url)
-					myfile.write('\n0.0.0.0 www.' + url)
+					myfile.write('\n0.0.0.0 ' + url + '\n')
+					myfile.write('\n0.0.0.0 www.' + url + '\n')
 				else:
 					duplicateUrls.append(url)
 		open(inputLocation, 'w').close()
@@ -62,4 +68,4 @@ def extract_urls_then_write():
 if __name__ == '__main__':
 	while True:
 		extract_urls_then_write()
-		time.sleep(20)
+		time.sleep(15)

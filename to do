@@ -3,3 +3,5 @@
 #add uncommenting of websites
 #alphabetize list of websites
 i can also can view embedded imgur links like 
+#there is error if there are no 0.0.0.0's in the file
+possibly add customizable redirect ip?
