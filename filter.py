@@ -8,7 +8,7 @@ def extract_urls_then_write():
 			websites = []
 			for line in f:
 				websites.append(line)
-		websites = [x.strip('\n') for x in websites] 
+		websites = [x.strip('\n') for x in websites if x != '\n'] 
 		existingWebsites = open('/etc/hosts').read()
 		duplicateUrls = []
 		with open("/etc/hosts", "a") as myfile:
