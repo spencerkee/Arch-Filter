@@ -1,5 +1,5 @@
 #!/usr/bin/env python2.7
-
+import time
 def extract_urls_then_write():
 	with open('inputsites') as f:
 		websites = []
@@ -13,5 +13,7 @@ def extract_urls_then_write():
 				myfile.write('\n0.0.0.0 ' + url)
 				myfile.write('\n0.0.0.0 www.' + url)
 	open('inputsites', 'w').close()
-
-extract_urls_then_write()
+if __name__ == '__main__':
+	while True:
+		extract_urls_then_write()
+		time.sleep(60)
