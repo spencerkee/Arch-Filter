@@ -1,5 +1,5 @@
 #there are possible errors if input is \n. 
-perhaps put newline at the end because i think append opens on a new line 
-add uncommenting of websites
-alphabetize list of websites
+#perhaps put newline at the end because i think append opens on a new line 
+#add uncommenting of websites
+#alphabetize list of websites
 i can also can view embedded imgur links
