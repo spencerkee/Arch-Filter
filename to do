@@ -5,3 +5,5 @@
 i can also can view embedded imgur links like 
 #there is error if there are no 0.0.0.0's in the file
 possibly add customizable redirect ip?
+perhaps add some kind of approval method?
+alphebetizing the list of websites doesn't work because some websites can start with w x y or z which will conflict with any website prefaced by www

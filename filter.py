@@ -2,9 +2,7 @@
 import time
 import os
 
-# hostsLocation = '/etc/hosts'
-# inputLocation = '/home/archie/Arch-Filter/inputsites'
-hostsLocation = '/home/archie/Arch-Filter/testhosts'
+hostsLocation = '/etc/hosts'
 inputLocation = '/home/archie/Arch-Filter/inputsites'
 
 def fileLength(fname):
@@ -68,4 +66,4 @@ def extract_urls_then_write():
 if __name__ == '__main__':
 	while True:
 		extract_urls_then_write()
-		time.sleep(15)
+		time.sleep(60)
