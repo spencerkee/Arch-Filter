@@ -9,3 +9,10 @@ perhaps add some kind of approval method?
 #alphebetizing the list of websites doesn't work because some websites can start with w x y or z which will #conflict with any website prefaced by www
 
 add checking for legitimate websites and error messages
+
+perhaps create a program that will tell you your root password after a specified time
+
+add to documentation:
+sudo chown root:root /path/to/filter.py
+sudo chmod 700 /path/to/filter.py
+& visudo steps
