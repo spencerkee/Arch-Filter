@@ -32,13 +32,23 @@ def sortHosts():
 			else:
 				hosts.append(line)
 			index += 1
-	hosts = [x.replace('#', '') for x in hosts if x != '\n']
-	hosts.sort()
+	hosts = [x.replace('#', '') for x in hosts if x != '\n']#remove commented out websites
+	sites_begining_with_www = []
+	sites_not_beginning_with_www = []
+	for i in hosts:
+		if 'www' in i:
+			sites_begining_with_www.append(i)
+		else:
+			sites_not_beginning_with_www.append(i)
+	sites_begining_with_www.sort()
+	sites_not_beginning_with_www.sort()
 	open(hostsLocation, 'w').close()
 	with open(hostsLocation, 'w') as f:
 		for i in beginningLines:
 			f.write(i)
-		for i in hosts:
+		for i in sites_begining_with_www:
+			f.write(i)
+		for i in sites_not_beginning_with_www:
 			f.write(i)
 
 def extract_urls_then_write():
